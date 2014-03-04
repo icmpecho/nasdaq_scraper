@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'nasdaq_scraper'
+require 'nasdaq_scraper/cli/application'
+
+NasdaqScraper::Cli::Application.start(ARGV)
