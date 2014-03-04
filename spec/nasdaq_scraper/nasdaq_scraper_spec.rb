@@ -2511,6 +2511,9 @@ eof
 			NasdaqScraper::scrape(html)[:index].should eq 4277.30
 			NasdaqScraper::scrape(html)[:change].should eq -30.82
 		end
+		it 'return nil if no nasdaq index in the string' do
+      NasdaqScraper::scrape('some random text here').should eq nil
+    end
 	end
 
 end
