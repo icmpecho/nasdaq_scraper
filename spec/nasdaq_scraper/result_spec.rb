@@ -9,4 +9,7 @@ describe NasdaqScraper::Result do
 	it 'have accessor to change' do
 		result.change.should eq 73.73
 	end
+	it 'can be converted to string' do
+		result.to_str.should eq "NASDAQ: Index(4351.03), Change(73.73)"
+	end
 end
