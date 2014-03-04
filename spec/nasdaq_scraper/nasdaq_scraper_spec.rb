@@ -2516,4 +2516,23 @@ eof
     end
 	end
 
+	describe 'scrape_url' do
+		it 'return nasdaq index if given nasdaq frontpage url' do
+      response = Object.new
+
+      def response.to_str
+        'nasdaqHomeIndexChart.storeIndexInfo("NASDAQ","4277.30","-30.82","0.72","2,033,058,694","4284.15","4239.65");'
+      end 
+
+      RestClient
+        .should_receive(:get)
+        .at_least(:once)
+        .with('http://www.nasdaq.com/')
+        .and_return(response)
+
+			NasdaqScraper::scrape_url('http://www.nasdaq.com/')[:index].should eq 4277.30
+			NasdaqScraper::scrape_url('http://www.nasdaq.com/')[:change].should eq -30.82
+		end
+	end
+
 end
