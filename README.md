@@ -6,7 +6,7 @@ You can use this gem to fetch NASDAQ frontpage from http://www.nasdaq.com and sc
 
 Add this line to your application's Gemfile:
 
-    gem 'nasdaq_scraper', :git => 'git://github.com/icmpecho/nasdaq_scraper.git'
+    gem 'nasdaq_scraper', :git => 'https://github.com/icmpecho/nasdaq_scraper.git'
 
 And then execute:
 
