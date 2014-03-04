@@ -12,10 +12,14 @@ module NasdaqScraper
 		end
 
 		def to_json
-			{
-				index: @index,
-				change: @change,
-			}.to_json
+			if(valid?)
+				{
+					index: @index,
+					change: @change,
+				}.to_json
+			else
+				{}.to_json
+			end
 		end
 
 		def valid?

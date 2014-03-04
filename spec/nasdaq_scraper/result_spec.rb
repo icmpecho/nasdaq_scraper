@@ -15,6 +15,9 @@ describe NasdaqScraper::Result do
 	it 'can be converted to json' do
 		result.to_json.should eq '{"index":4351.03,"change":73.73}'
 	end
+	it 'can be converted to empty json when invalid' do
+		NasdaqScraper::Result.new.to_json.should eq "{}"
+	end
 	it 'can validate itself' do
 		result.should be_valid
 		NasdaqScraper::Result.new(nil,nil).should_not be_valid
