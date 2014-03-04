@@ -14,7 +14,7 @@ And then execute:
 
 Or manually install by cloning this repository and run:
 
-		$ rake build
+    $ rake build
 
 Then:
     
