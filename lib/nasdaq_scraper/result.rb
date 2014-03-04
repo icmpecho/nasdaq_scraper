@@ -2,7 +2,7 @@ module NasdaqScraper
 	class Result
 		attr_reader :index, :change
 
-		def initialize(index, change)
+		def initialize(index=nil, change=nil)
 			@index = index
 			@change = change
 		end
