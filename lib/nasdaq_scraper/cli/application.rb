@@ -6,9 +6,14 @@ module NasdaqScraper
 		class Application < Thor
 			
 			desc 'scrape [URL]', 'Scrape the [URL] for NASDAQ index'
+			method_option :json, :type => :boolean, :description => 'Generate JSON result', :default => false
 			def scrape(url)
 				data = NasdaqScraper::scrape_url(url)
-				puts data.to_str
+				if options[:json]
+					puts data.to_json
+				else
+					puts data.to_str
+				end
 			end
 
 		end
