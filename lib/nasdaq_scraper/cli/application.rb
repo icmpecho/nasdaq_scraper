@@ -7,7 +7,7 @@ module NasdaqScraper
 			
 			desc 'scrape [URL]', 'Scrape the [URL] for NASDAQ index'
 			method_option :json, :type => :boolean, :description => 'Generate JSON result', :default => false
-			def scrape(url)
+			def scrape(url='http://www.nasdaq.com')
 				data = NasdaqScraper::scrape_url(url)
 				if options[:json]
 					puts data.to_json
