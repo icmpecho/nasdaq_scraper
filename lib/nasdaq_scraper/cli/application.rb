@@ -5,7 +5,7 @@ module NasdaqScraper
 	module Cli
 		class Application < Thor
 			
-			desc 'scrape URL', 'Scrape the URL for NASDAQ index'
+			desc 'scrape [URL]', 'Scrape the [URL] for NASDAQ index'
 			def scrape(url)
 				data = NasdaqScraper::scrape_url(url)
 				puts "NASDAQ:"
