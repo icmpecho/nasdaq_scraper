@@ -8,7 +8,11 @@ module NasdaqScraper
 		end
 
 		def to_str
-			"NASDAQ: Index(#{@index}), Change(#{@change})"
+			if(valid?)
+				"NASDAQ: Index(#{@index}), Change(#{@change})"
+			else
+				"An error occured."
+			end
 		end
 
 		def to_json

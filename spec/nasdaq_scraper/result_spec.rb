@@ -13,6 +13,9 @@ describe NasdaqScraper::Result do
 	it 'can be converted to string' do
 		result.to_str.should eq "NASDAQ: Index(4351.03), Change(73.73)"
 	end
+	it 'can be converted to error string when invalid' do
+		invalid_result.to_str.should eq "An error occured."
+	end
 	it 'can be converted to json' do
 		result.to_json.should eq '{"index":4351.03,"change":73.73}'
 	end
