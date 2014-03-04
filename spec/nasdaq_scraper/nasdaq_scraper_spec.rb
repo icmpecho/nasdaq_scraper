@@ -2508,15 +2508,15 @@ eof
 
 	describe 'scrape' do
 		it 'return current nasdaq index' do
-			NasdaqScraper::scrape(html)[:index].should eq 4277.30
-			NasdaqScraper::scrape(html)[:change].should eq -30.82
+			NasdaqScraper::scrape(html).index.should eq 4277.30
+			NasdaqScraper::scrape(html).change.should eq -30.82
 		end
 		it 'return nil if no nasdaq index in the string' do
       NasdaqScraper::scrape('some random text here').should eq nil
     end
     it 'should still work with positive change' do
     	str = 'nasdaqHomeIndexChart.storeIndexInfo("NASDAQ","4277.30","30.82","0.72","2,033,058,694","4284.15","4239.65");'
-    	NasdaqScraper::scrape(str)[:change].should eq 30.82
+    	NasdaqScraper::scrape(str).change.should eq 30.82
     end
 	end
 
@@ -2534,8 +2534,8 @@ eof
         .with('http://www.nasdaq.com/')
         .and_return(response)
 
-			NasdaqScraper::scrape_url('http://www.nasdaq.com/')[:index].should eq 4277.30
-			NasdaqScraper::scrape_url('http://www.nasdaq.com/')[:change].should eq -30.82
+			NasdaqScraper::scrape_url('http://www.nasdaq.com/').index.should eq 4277.30
+			NasdaqScraper::scrape_url('http://www.nasdaq.com/').change.should eq -30.82
 		end
 		it 'return nil if given random page' do
 			NasdaqScraper::scrape_url('http://this.is.a.random.page.abc.xyz').should eq nil

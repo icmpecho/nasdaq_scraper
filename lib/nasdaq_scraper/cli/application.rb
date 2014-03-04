@@ -9,8 +9,8 @@ module NasdaqScraper
 			def scrape(url)
 				data = NasdaqScraper::scrape_url(url)
 				puts "NASDAQ:"
-				puts "Index: #{data[:index]}"
-				puts "Change: #{data[:change]}"
+				puts "Index: #{data.index}"
+				puts "Change: #{data.change}"
 			end
 
 		end
