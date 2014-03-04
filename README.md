@@ -12,6 +12,15 @@ And then execute:
 
     $ bundle
 
+Or manually install by cloning this repository and run:
+
+		$ rake build
+
+Then:
+    
+    $ rake install
+
+
 ## Usage
 
 To fetch NASDAQ data as text
