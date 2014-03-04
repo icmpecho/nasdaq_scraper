@@ -11,5 +11,12 @@ module NasdaqScraper
 			"NASDAQ: Index(#{@index}), Change(#{@change})"
 		end
 
+		def to_json
+			{
+				index: @index,
+				change: @change,
+			}.to_json
+		end
+
 	end
 end
