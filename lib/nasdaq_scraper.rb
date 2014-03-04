@@ -9,7 +9,11 @@ module NasdaqScraper
   end
 
   def scrape_url(url)
-  	response = RestClient.get url
+  	begin
+  		response = RestClient.get url
+  	rescue
+  		return nil
+  	end
   	scrape response.to_str
   end
 

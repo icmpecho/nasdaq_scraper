@@ -2533,6 +2533,9 @@ eof
 			NasdaqScraper::scrape_url('http://www.nasdaq.com/')[:index].should eq 4277.30
 			NasdaqScraper::scrape_url('http://www.nasdaq.com/')[:change].should eq -30.82
 		end
+		it 'return nil if given random page' do
+			NasdaqScraper::scrape_url('http://this.is.a.random.page.abc.xyz').should eq nil
+    end
 	end
 
 end
