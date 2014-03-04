@@ -18,5 +18,9 @@ module NasdaqScraper
 			}.to_json
 		end
 
+		def valid?
+			@index == nil ? false : true
+		end
+
 	end
 end
