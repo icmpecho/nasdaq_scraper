@@ -1,28 +1,37 @@
 # NasdaqScraper
 
-TODO: Write a gem description
+You can use this gem to fetch NASDAQ frontpage from http://www.nasdaq.com and scrape data for NASDAQ index and index changes from that page
 
 ## Installation
 
 Add this line to your application's Gemfile:
 
-    gem 'nasdaq_scraper'
+    gem 'nasdaq_scraper', :git => 'git://github.com/icmpecho/nasdaq_scraper.git'
 
 And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install nasdaq_scraper
-
 ## Usage
 
-TODO: Write usage instructions here
+To fetch NASDAQ data as text
+
+    nasdaq_scraper scrape [ optional url ]
+
+To fetch NASDAQ data as json
+
+    nasdaq_scraper scrape --json [ optional url ]
+
+If you left url blank it'll be http://www.nasdaq.com
+
+To view help
+
+    nasdaq_scraper
+
 
 ## Contributing
 
-1. Fork it ( http://github.com/<my-github-username>/nasdaq_scraper/fork )
+1. Fork it ( http://github.com/icmpecho/nasdaq_scraper/fork )
 2. Create your feature branch (`git checkout -b my-new-feature`)
 3. Commit your changes (`git commit -am 'Add some feature'`)
 4. Push to the branch (`git push origin my-new-feature`)
